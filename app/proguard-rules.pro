@@ -23,3 +23,17 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn org.litepal.*
+-keep class org.litepal.** { *; }
+-keep enum org.litepal.**
+-keep interface org.litepal.** { *; }
+-keep public class * extends org.litepal.**
+-keepattributes *Annotation*
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * extends org.litepal.crud.DataSupport{
+   private * ;
+}
